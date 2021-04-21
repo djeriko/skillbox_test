@@ -22,12 +22,19 @@ class UsersBloc extends Bloc<UsersEvent, UsersState> {
     if (event is FetchUsers) {
       yield UsersLoading();
       try {
-        var users = await repository.getUsers();
-        print(users);
+        List<User> users = await repository.getUsers();
         yield UsersLoaded(users: users);
       } on ServerExeption {
         yield UsersFailure();
       }
+    } else if (event is UpdateUsers) {
+      final List<User> updatedUsers = event.currentUsers.map<User>((user) {
+        if (event.userId == user.id) {
+          return user.copyWith(isSelected: !user.isSelected);
+        }
+        return user;
+      }).toList();
+      yield UsersLoaded(users: updatedUsers);
     }
   }
 }

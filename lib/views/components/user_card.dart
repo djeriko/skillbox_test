@@ -12,6 +12,7 @@ class UserCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
+      color: user.isSelected ? Colors.green : Colors.red,
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Row(
