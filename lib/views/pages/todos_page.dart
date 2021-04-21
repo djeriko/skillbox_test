@@ -6,11 +6,11 @@ import 'package:skillbox_test/views/widgets/todos_list.dart';
 class TodosPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<TodosBloc>(context).add(FetchTodos());
     return BlocBuilder<TodosBloc, TodosState>(
       builder: (context, state) {
         if (state is TodosLoaded) {
           return TodosList(
+            key: PageStorageKey('users_page_key'),
             todos: state.todos,
           );
         } else if (state is TodosError) {

@@ -6,11 +6,11 @@ import 'package:skillbox_test/views/widgets/users_list.dart';
 class UsersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<UsersBloc>(context).add(FetchUsers());
     return BlocBuilder<UsersBloc, UsersState>(
       builder: (context, state) {
         if (state is UsersLoaded) {
           return UsersList(
+            key: PageStorageKey('users_page_key'),
             users: state.users,
           );
         } else if (state is UsersFailure) {
