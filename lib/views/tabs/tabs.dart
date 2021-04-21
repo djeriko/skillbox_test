@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skillbox_test/blocs/tabs/tabs_bloc.dart';
+import 'package:skillbox_test/views/pages/todos_page.dart';
 import 'package:skillbox_test/views/pages/users_page.dart';
 
 class Tabs extends StatelessWidget {
@@ -16,7 +17,7 @@ class Tabs extends StatelessWidget {
         } else if (state is UsersPageLoaded) {
           return UsersPage();
         } else if (state is TodosPageLoaded) {
-          return const Text('Todoes');
+          return TodosPage();
         }
         return const Center(
           child: Text('Empty'),
