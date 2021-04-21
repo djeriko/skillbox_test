@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:skillbox_test/error/exceptions.dart';
-import 'package:skillbox_test/models/todo.dart';
+import 'package:skillbox_test/models/models.dart';
 import 'package:skillbox_test/repositories/todos_remote_repository.dart';
 
 part 'todos_event.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skillbox_test/blocs/users/users_bloc.dart';
-import 'package:skillbox_test/views/widgets/friends_list.dart';
+import 'package:skillbox_test/views/widgets/widgets.dart';
 
 class ChatPage extends StatelessWidget {
   @override

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:skillbox_test/error/exceptions.dart';
-import 'package:skillbox_test/models/users.dart';
+import 'package:skillbox_test/models/models.dart';
 import 'package:http/http.dart' as http;
 
 class UsersRemoteRepository {

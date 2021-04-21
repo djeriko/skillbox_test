@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skillbox_test/blocs/todos_bloc/todos_bloc.dart';
-import 'package:skillbox_test/views/widgets/todos_list.dart';
+import 'package:skillbox_test/views/widgets/widgets.dart';
 
-class TodosPage extends StatelessWidget {
+class TodosTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<TodosBloc, TodosState>(

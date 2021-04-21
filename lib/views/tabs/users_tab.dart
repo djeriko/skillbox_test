@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skillbox_test/blocs/users/users_bloc.dart';
-import 'package:skillbox_test/views/widgets/users_list.dart';
+import 'package:skillbox_test/views/widgets/widgets.dart';
 
-class UsersPage extends StatelessWidget {
+class UsersTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<UsersBloc, UsersState>(

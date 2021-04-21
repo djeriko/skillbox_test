@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skillbox_test/blocs/users/users_bloc.dart';
 import 'package:skillbox_test/models/users.dart';
-import 'package:skillbox_test/views/components/user_card.dart';
+import 'package:skillbox_test/views/components/components.dart';
 
 class UsersList extends StatelessWidget {
   final List<User> users;
