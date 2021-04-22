@@ -15,12 +15,31 @@ class SkillboxApp extends StatelessWidget {
     return MaterialApp(
       title: 'Skillbox Test App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Color(0xff28abb9),
+        accentColor: Color(0xffeaffd0),
+        indicatorColor: Color(0xFF2d6187),
+        disabledColor: Color(0xffa8dda8),
         textTheme: TextTheme(
-          headline5: TextStyle(
-            fontSize: 30,
+          subtitle1: TextStyle(
+            fontSize: 25,
             fontFamily: "Hind",
+            color: Colors.white,
           ),
+          headline1: TextStyle(
+              fontWeight: FontWeight.normal,
+              fontSize: 25,
+              fontFamily: "Hind",
+              color: Colors.black87),
+          subtitle2: TextStyle(
+            fontSize: 18,
+            fontFamily: "Hind",
+            color: Colors.white,
+          ),
+          headline2: TextStyle(
+              fontWeight: FontWeight.normal,
+              fontSize: 18,
+              fontFamily: "Hind",
+              color: Colors.black87),
         ),
       ),
       routes: <String, WidgetBuilder>{
@@ -31,4 +50,3 @@ class SkillboxApp extends StatelessWidget {
     );
   }
 }
-

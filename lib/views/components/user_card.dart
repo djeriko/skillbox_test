@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skillbox_test/helpers/extract_name_letters.dart';
 import 'package:skillbox_test/models/users.dart';
 
 class UserCard extends StatelessWidget {
@@ -8,11 +9,12 @@ class UserCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
-      color: user.isSelected ? Colors.green : Colors.red,
+      color: user.isSelected ? theme.indicatorColor : theme.accentColor,
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Row(
@@ -25,20 +27,25 @@ class UserCard extends StatelessWidget {
                   Text(
                     user.name,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.headline5,
+                    style: user.isSelected
+                        ? theme.textTheme.subtitle1
+                        : theme.textTheme.headline1,
                   ),
                   Text(
                     user.email,
-                    style: Theme.of(context).textTheme.headline6,
+                    style: user.isSelected
+                        ? theme.textTheme.subtitle2
+                        : theme.textTheme.headline2,
                   ),
                 ],
               ),
             ),
             SizedBox(width: 10),
             CircleAvatar(
+              backgroundColor: theme.disabledColor,
               radius: 35,
               child: Text(
-                'MG',
+                ExtractNameLetters(user.name).getInitials(),
                 style: Theme.of(context).textTheme.headline4,
               ),
             )

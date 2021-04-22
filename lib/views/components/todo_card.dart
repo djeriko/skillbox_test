@@ -8,8 +8,9 @@ class TodoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Card(
-      color: todo.completed ? Colors.red[50] : Colors.green[50],
+      color: todo.completed ? theme.disabledColor : theme.accentColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
