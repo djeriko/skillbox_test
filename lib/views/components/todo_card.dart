@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:skillbox_test/models/todo.dart';
 
 class TodoCard extends StatelessWidget {
-  const TodoCard({Key key, this.todo}) : super(key: key);
+  const TodoCard({Key? key, this.todo}) : super(key: key);
 
-  final Todo todo;
+  final Todo? todo;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Card(
-      color: todo.completed ? theme.disabledColor : theme.accentColor,
+      color: todo!.completed! ? theme.disabledColor : theme.accentColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
@@ -26,7 +26,7 @@ class TodoCard extends StatelessWidget {
                   RichText(
                     maxLines: 3,
                     text: TextSpan(
-                      text: todo.title,
+                      text: todo!.title,
                       style: Theme.of(context).textTheme.headline5,
                     ),
                   ),

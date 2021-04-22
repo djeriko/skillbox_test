@@ -3,9 +3,9 @@ import 'package:skillbox_test/helpers/extract_name_letters.dart';
 import 'package:skillbox_test/models/users.dart';
 
 class UserCard extends StatelessWidget {
-  const UserCard({Key key, this.user}) : super(key: key);
+  const UserCard({Key? key, this.user}) : super(key: key);
 
-  final User user;
+  final User? user;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class UserCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
-      color: user.isSelected ? theme.indicatorColor : theme.accentColor,
+      color: user!.isSelected! ? theme.indicatorColor : theme.accentColor,
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Row(
@@ -25,15 +25,15 @@ class UserCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    user.name,
+                    user!.name!,
                     overflow: TextOverflow.ellipsis,
-                    style: user.isSelected
+                    style: user!.isSelected!
                         ? theme.textTheme.subtitle1
                         : theme.textTheme.headline1,
                   ),
                   Text(
-                    user.email,
-                    style: user.isSelected
+                    user!.email!,
+                    style: user!.isSelected!
                         ? theme.textTheme.subtitle2
                         : theme.textTheme.headline2,
                   ),
@@ -43,11 +43,11 @@ class UserCard extends StatelessWidget {
             SizedBox(width: 10),
             CircleAvatar(
               backgroundColor:
-                  user.isSelected ? theme.primaryColor : theme.disabledColor,
+                  user!.isSelected! ? theme.primaryColor : theme.disabledColor,
               radius: 35,
               child: Text(
-                ExtractNameLetters(user.name).getInitials(),
-                style: user.isSelected
+                ExtractNameLetters(user!.name).getInitials(),
+                style: user!.isSelected!
                     ? theme.textTheme.headline4
                     : theme.textTheme.headline3,
               ),

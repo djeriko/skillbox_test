@@ -8,7 +8,7 @@ abstract class TabsState extends Equatable {
 }
 
 class CurrentIndexChanged extends TabsState{
-  CurrentIndexChanged({@required this.currentIndex});
+  CurrentIndexChanged({required this.currentIndex});
 
   final int currentIndex;
 

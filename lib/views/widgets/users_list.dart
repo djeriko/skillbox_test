@@ -5,12 +5,12 @@ import 'package:skillbox_test/models/users.dart';
 import 'package:skillbox_test/views/components/components.dart';
 
 class UsersList extends StatelessWidget {
-  final List<User> users;
+  final List<User>? users;
 
-  const UsersList({Key key, this.users}) : super(key: key);
+  const UsersList({Key? key, this.users}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    void onTap(int index) {
+    void onTap(int? index) {
       print('tap $index');
       BlocProvider.of<UsersBloc>(context).add(
         UpdateUsers(
@@ -21,12 +21,12 @@ class UsersList extends StatelessWidget {
     }
 
     return ListView.builder(
-      itemCount: users.length,
+      itemCount: users!.length,
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
-          onTap: () => onTap(users[index].id),
+          onTap: () => onTap(users![index].id),
           child: UserCard(
-            user: users[index],
+            user: users![index],
           ),
         );
       },

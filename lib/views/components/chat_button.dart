@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ChatButton extends StatelessWidget {
   const ChatButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

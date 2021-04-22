@@ -11,7 +11,7 @@ part 'users_event.dart';
 part 'users_state.dart';
 
 class UsersBloc extends Bloc<UsersEvent, UsersState> {
-  UsersBloc({@required this.repository}) : super(UsersInitial());
+  UsersBloc({required this.repository}) : super(UsersInitial());
 
   final UsersRemoteRepository repository;
 
@@ -22,15 +22,15 @@ class UsersBloc extends Bloc<UsersEvent, UsersState> {
     if (event is FetchUsers) {
       yield UsersLoading();
       try {
-        List<User> users = await repository.getUsers();
+        List<User>? users = await repository.getUsers();
         yield UsersLoaded(users: users);
       } on ServerExeption {
         yield UsersFailure();
       }
     } else if (event is UpdateUsers) {
-      final List<User> updatedUsers = event.currentUsers.map<User>((user) {
+      final List<User> updatedUsers = event.currentUsers!.map<User>((user) {
         if (event.userId == user.id) {
-          return user.copyWith(isSelected: !user.isSelected);
+          return user.copyWith(isSelected: !user.isSelected!);
         }
         return user;
       }).toList();

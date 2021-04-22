@@ -10,14 +10,14 @@ class User extends Equatable {
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
-      id: json['id'] ?? '',
+      id: json['id'] ?? '' as int?,
       name: json['name'] ?? '',
       email: json['email'] ?? '',
       isSelected: false,
     );
   }
 
-  User copyWith({int id, String name, String email, bool isSelected}) {
+  User copyWith({int? id, String? name, String? email, bool? isSelected}) {
     return User(
       id: id ?? this.id,
       name: name ?? this.name,
@@ -26,11 +26,11 @@ class User extends Equatable {
     );
   }
 
-  final int id;
-  final String name;
-  final String email;
-  final bool isSelected;
+  final int? id;
+  final String? name;
+  final String? email;
+  final bool? isSelected;
 
   @override
-  List<Object> get props => [id, name, email, isSelected];
+  List<Object?> get props => [id, name, email, isSelected];
 }

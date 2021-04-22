@@ -1,10 +1,10 @@
 class ExtractNameLetters {
-  final String name;
+  final String? name;
 
   ExtractNameLetters(this.name);
 
   String getInitials() {
-    List<String> names = name.split(" ");
+    List<String> names = name!.split(" ");
     String initials = "";
 
     for (int i = 0; i < names.length; i++) {

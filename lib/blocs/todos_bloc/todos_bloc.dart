@@ -11,7 +11,7 @@ part 'todos_event.dart';
 part 'todos_state.dart';
 
 class TodosBloc extends Bloc<TodosEvent, TodosState> {
-  TodosBloc({@required this.repository}) : super(TodosInitial());
+  TodosBloc({required this.repository}) : super(TodosInitial());
 
   final TodosRemoteRepository repository;
 
@@ -21,7 +21,7 @@ class TodosBloc extends Bloc<TodosEvent, TodosState> {
   ) async* {
     yield TodosLoading();
     try {
-      List<Todo> todos = await repository.getTodos();
+      List<Todo>? todos = await repository.getTodos();
       yield TodosLoaded(todos: todos);
     } on ServerExeption {
       yield TodosError();

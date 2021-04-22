@@ -10,7 +10,7 @@ abstract class TabsEvent extends Equatable {
 class AppStarted extends TabsEvent {}
 
 class PageTapped extends TabsEvent {
-  PageTapped({@required this.index});
+  PageTapped({required this.index});
 
   final int index;
 

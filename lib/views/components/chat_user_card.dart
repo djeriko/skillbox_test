@@ -3,9 +3,9 @@ import 'package:skillbox_test/helpers/extract_name_letters.dart';
 import 'package:skillbox_test/models/users.dart';
 
 class ChatUserCard extends StatelessWidget {
-  const ChatUserCard({Key key, this.user}) : super(key: key);
+  const ChatUserCard({Key? key, this.user}) : super(key: key);
 
-  final User user;
+  final User? user;
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +23,14 @@ class ChatUserCard extends StatelessWidget {
               backgroundColor: theme.disabledColor,
               radius: 25,
               child: Text(
-                ExtractNameLetters(user.name).getInitials(),
+                ExtractNameLetters(user!.name).getInitials(),
                 style: theme.textTheme.subtitle1,
               ),
             ),
             SizedBox(width: 10),
             Expanded(
               child: Text(
-                user.name,
+                user!.name!,
                 overflow: TextOverflow.ellipsis,
                 style: theme.textTheme.headline1,
                 textAlign: TextAlign.end,

@@ -21,7 +21,7 @@ class ChatPage extends StatelessWidget {
           builder: (context, state) {
             if (state is UsersLoaded) {
               List<User> selectedUsers =
-                  state.users.where((user) => user.isSelected).toList();
+                  state.users!.where((user) => user.isSelected!).toList();
 
               if (selectedUsers.length == 0) {
                 return Center(
