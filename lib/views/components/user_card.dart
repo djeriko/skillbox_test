@@ -42,11 +42,14 @@ class UserCard extends StatelessWidget {
             ),
             SizedBox(width: 10),
             CircleAvatar(
-              backgroundColor: theme.disabledColor,
+              backgroundColor:
+                  user.isSelected ? theme.primaryColor : theme.disabledColor,
               radius: 35,
               child: Text(
                 ExtractNameLetters(user.name).getInitials(),
-                style: Theme.of(context).textTheme.headline4,
+                style: user.isSelected
+                    ? theme.textTheme.headline4
+                    : theme.textTheme.headline3,
               ),
             )
           ],

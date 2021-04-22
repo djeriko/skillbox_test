@@ -6,14 +6,17 @@ class ExtractNameLetters {
   String getInitials() {
     List<String> names = name.split(" ");
     String initials = "";
-    int numWords = 2;
 
-    if (numWords < names.length) {
-      names = [names[names.length - 2], names[names.length - 1]];
-    }
+    for (int i = 0; i < names.length; i++) {
+      if (names[i].contains('.')) {
+        continue;
+      }
 
-    for (int i = 0; i < numWords; i++) {
       initials += "${names[i][0]}";
+
+      if (initials.length == 2) {
+        break;
+      }
     }
     return initials;
   }

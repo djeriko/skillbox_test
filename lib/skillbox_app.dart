@@ -22,24 +22,34 @@ class SkillboxApp extends StatelessWidget {
         textTheme: TextTheme(
           subtitle1: TextStyle(
             fontSize: 25,
-            fontFamily: "Hind",
+            fontFamily: "Roboto",
             color: Colors.white,
           ),
           headline1: TextStyle(
               fontWeight: FontWeight.normal,
               fontSize: 25,
-              fontFamily: "Hind",
+              fontFamily: "Roboto",
               color: Colors.black87),
           subtitle2: TextStyle(
             fontSize: 18,
-            fontFamily: "Hind",
-            color: Colors.white,
+            fontFamily: "Roboto",
+            color: Colors.white70,
           ),
           headline2: TextStyle(
               fontWeight: FontWeight.normal,
               fontSize: 18,
-              fontFamily: "Hind",
-              color: Colors.black87),
+              fontFamily: "Roboto",
+              color: Colors.black45),
+          headline3: TextStyle(
+              fontWeight: FontWeight.normal,
+              fontSize: 30,
+              fontFamily: "Roboto",
+              color: Colors.black54),
+          headline4: TextStyle(
+              fontWeight: FontWeight.normal,
+              fontSize: 30,
+              fontFamily: "Roboto",
+              color: Colors.white),
         ),
       ),
       routes: <String, WidgetBuilder>{

@@ -2,7 +2,7 @@
     package="com.example.skillbox_test">
    <application
         android:label="skillbox_test"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

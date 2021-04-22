@@ -11,7 +11,7 @@ class FriendsList extends StatelessWidget {
     return ListView.builder(
       itemCount: users.length,
       itemBuilder: (BuildContext context, int index) {
-        return UserCard(
+        return ChatUserCard(
           user: users[index],
         );
       },
